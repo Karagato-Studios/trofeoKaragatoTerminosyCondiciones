@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trofeo Karagato — Términos y Condiciones</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #6C63FF;
+            --primary-light: #8B85FF;
+            --secondary: #FF6584;
+            --gold: #D4A843;
+            --gold-light: #F0DEB4;
+            --bg: #FAFAFE;
+            --card: #FFFFFF;
+            --text: #1A1A2E;
+            --text-soft: #6B6B80;
+            --text-muted: #9A9AB0;
+            --border: #EEEEF4;
+            --radius: 20px;
+            --shadow: 0 2px 20px rgba(108, 99, 255, 0.06);
+            --shadow-hover: 0 8px 40px rgba(108, 99, 255, 0.10);
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            padding: 40px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: white;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .logo-text span { color: var(--primary); }
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: -0.5px;
+        }
+        header p {
+            color: var(--text-soft);
+            font-size: 16px;
+            margin-top: 8px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ─── CAT DECO ─── */
+        .cat-divider {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 20px;
+            opacity: 0.3;
+            letter-spacing: 8px;
+            user-select: none;
+        }
+
+        /* ─── NAV TABS ─── */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            background: var(--card);
+            border-radius: 14px;
+            padding: 4px;
+            box-shadow: var(--shadow);
+            margin: 28px 0;
+            border: 1px solid var(--border);
+        }
+        .tab {
+            flex: 1;
+            padding: 14px 20px;
+            text-align: center;
+            border-radius: 11px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.25s;
+            color: var(--text-soft);
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            position: relative;
+        }
+        .tab:hover { color: var(--text); background: #F5F5FF; }
+        .tab.active {
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            box-shadow: 0 2px 12px rgba(108, 99, 255, 0.25);
+        }
+        .tab .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            font-size: 11px;
+            padding: 1px 8px;
+            border-radius: 20px;
+            margin-left: 6px;
+            font-weight: 500;
+        }
+        .tab.active .badge { background: rgba(255,255,255,0.25); }
+
+        /* ─── SECTIONS ─── */
+        .section {
+            display: none;
+            animation: fadeUp 0.4s ease;
+        }
+        .section.active { display: block; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.3s;
+        }
+        .card:hover { box-shadow: var(--shadow-hover); }
+
+        .card h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card h2 .emoji { font-size: 24px; }
+        .card .sub {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--gold-light);
+            padding-left: 14px;
+        }
+        .card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 24px 0 10px;
+            color: var(--text);
+        }
+        .card h3:first-of-type { margin-top: 4px; }
+        .card p {
+            color: var(--text-soft);
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            color: var(--text-soft);
+            font-size: 15px;
+        }
+        .card ul li::before {
+            content: '🐾';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+        .card ul li strong { color: var(--text); }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #F8F7FF, #FFF5F7);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin: 16px 0;
+            border-left: 4px solid var(--primary);
+        }
+        .highlight-box p {
+            color: var(--text);
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+        .highlight-box p strong { color: var(--primary); }
+
+        .last-update {
+            display: inline-block;
+            font-size: 13px;
+            color: var(--text-muted);
+            background: #F5F5FF;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align: center;
+            padding: 40px 0 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 20px;
+        }
+        footer .paws {
+            font-size: 18px;
+            opacity: 0.2;
+            letter-spacing: 6px;
+            margin-bottom: 12px;
+        }
+        footer p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        footer p a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer p a:hover { text-decoration: underline; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 600px) {
+            .container { padding: 0 16px; }
+            header h1 { font-size: 24px; }
+            .card { padding: 24px 20px; }
+            .card h2 { font-size: 19px; }
+            .tabs { flex-direction: column; gap: 2px; }
+            .tab { padding: 12px; font-size: 14px; }
+            header { padding: 24px 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">🏆</div>
+            <div class="logo-text">Trofeo <span>Karagato</span></div>
+        </div>
+        <h1>Términos y condiciones</h1>
+        <p>La liga más felina de internet. Todo lo que necesitas saber antes de votar.</p>
+    </header>
+
+    <div class="cat-divider">🐱 ✦ 🐱 ✦ 🐱</div>
+
+    <!-- TABS -->
+    <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="terminos" role="tab">
+            📜 Términos y Condiciones
+        </button>
+        <button class="tab" data-tab="privacidad" role="tab">
+            🔒 Aviso de Privacidad
+        </button>
+    </div>
+
+    <!-- ════════════════ TÉRMINOS ════════════════ -->
+    <section class="section active" id="terminos" role="tabpanel">
+
+        <div class="card">
+            <span class="last-update">📅 Última actualización: junio 2026</span>
+            <h2><span class="emoji">📋</span> 1. Aceptación de los términos</h2>
+            <p>Al descargar, instalar o usar <strong>Trofeo Karagato</strong> aceptas íntegramente estos términos. Si no estás de acuerdo, no uses la aplicación.</p>
+            <p>Esta app es operada por <strong>Karagato Studios</strong> con fines de entretenimiento y competencia amistosa entre mascotas.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🎯</span> 2. Cómo funciona</h2>
+            <p>Trofeo Karagato es un torneo por fases donde los usuarios votan por sus mascotas favoritas:</p>
+            <ul>
+                <li><strong>Fase diaria:</strong> Cada día se presentan 3 aspirantes. Los usuarios votan usando tokens.</li>
+                <li><strong>Fase mensual:</strong> Los 30 ganadores diarios compiten durante los primeros 4 días del mes siguiente.</li>
+                <li><strong>Fase anual:</strong> Los 12 ganadores mensuales se enfrentan en una gran final de 7 días en enero.</li>
+                <li><strong>Tokens:</strong> Tienes un máximo de 2 tokens. Se regenera 1 token cada hora. Empiezas con 2 al instalar.</li>
+            </ul>
+            <div class="highlight-box">
+                <p>🐱 <strong>Votar es gratis y no requiere registro.</strong> No necesitas crear una cuenta ni compartir tu correo electrónico.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">⚖️</span> 3. Responsabilidades del usuario</h2>
+            <ul>
+                <li><strong>Uso honesto:</strong> No está permitido manipular votos mediante automatización, bots o cualquier método artificial.</li>
+                <li><strong>Edad mínima:</strong> Debes tener al menos 13 años para usar la app. Si eres menor, usa la app bajo supervisión de un adulto.</li>
+                <li><strong>Contenido:</strong> Las imágenes y descripciones de los contendientes son proporcionadas por los organizadores. No subes contenido tú como usuario.</li>
+                <li><strong>Conducta:</strong> No uses la app para fines ilegales o no autorizados.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🕒</span> 4. Sistema de tokens y votos</h2>
+            <ul>
+                <li>Máximo 2 tokens por usuario.</li>
+                <li>Se regenera 1 token cada hora, hasta alcanzar el máximo de 2.</li>
+                <li>Los tokens no se pueden comprar ni transferir. No hay anuncios ni microtransacciones.</li>
+                <li>No hay límite de votos por contendiente: todos los que tengan tokens pueden votar.</li>
+                <li>Karagato Studios se reserva el derecho de ajustar el sistema de tokens si es necesario para garantizar la equidad del torneo.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">📊</span> 5. Resultados y transparencia</h2>
+            <p>Los resultados de cada fase se publican en el repositorio oficial de GitHub para garantizar total transparencia:</p>
+            <ul>
+                <li><strong>Resultados diarios:</strong> Se almacenan en la base de datos de Firebase Firestore y son visibles en el calendario de la app.</li>
+                <li><strong>Resultados mensuales y anuales:</strong> Se publican en el repositorio público de GitHub del proyecto.</li>
+                <li>Cualquier persona puede verificar los resultados consultando el historial de votos.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🚫</span> 6. Limitación de responsabilidad</h2>
+            <p>Trofeo Karagato se ofrece "tal cual" y "según disponibilidad". No garantizamos que la app esté libre de errores ni disponible de forma ininterrumpida.</p>
+            <p>Karagato Studios no se hace responsable por:</p>
+            <ul>
+                <li>Daños o pérdidas derivadas del uso de la aplicación.</li>
+                <li>Contenido de terceros mostrado dentro de la app (imágenes alojadas en servicios externos).</li>
+                <li>Modificaciones en la fecha/hora del dispositivo que afecten el funcionamiento del torneo.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🔄</span> 7. Cambios en los términos</h2>
+            <p>Podemos actualizar estos términos en cualquier momento. Los cambios importantes se notificarán dentro de la aplicación y se actualizará la fecha de "última actualización" al inicio de esta página.</p>
+            <p>El uso continuado de la app después de los cambios constituye la aceptación de los nuevos términos.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">📬</span> 8. Contacto</h2>
+            <p>Si tienes preguntas sobre estos términos, puedes contactarnos a través de:</p>
+            <ul>
+                <li><strong>GitHub:</strong> <a href="https://github.com/Karagato-Studios" target="_blank" style="color: var(--primary);">Karagato Studios</a></li>
+                <li><strong>Repositorio del proyecto:</strong> <a href="https://github.com/KaragatoStudios/TrofeoKaragato" target="_blank" style="color: var(--primary);">Trofeo Karagato en GitHub</a></li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- ════════════════ PRIVACIDAD ════════════════ -->
+    <section class="section" id="privacidad" role="tabpanel">
+
+        <div class="card">
+            <span class="last-update">📅 Última actualización: junio 2026</span>
+            <h2><span class="emoji">🛡️</span> Aviso de privacidad</h2>
+            <p>En <strong>Karagato Studios</strong> nos tomamos tu privacidad en serio. Esta página explica qué información recopilamos, cómo la usamos y qué derechos tienes.</p>
+            <div class="highlight-box">
+                <p>🐱 <strong>Resumen:</strong> No recopilamos información personal. No necesitas registro, correo electrónico ni cuenta. Solo almacenamos datos locales en tu dispositivo y votos anónimos en Firebase.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">📱</span> 2. Datos que recopilamos</h2>
+
+            <h3>2.1 Datos locales (en tu dispositivo)</h3>
+            <ul>
+                <li><strong>Tokens disponibles:</strong> Guardamos la cantidad de tokens que tienes y el momento en que se gastó el último, usando <strong>SharedPreferences</strong> de Android.</li>
+                <li><strong>Preferencias:</strong> Configuración básica de la app, como el mes seleccionado en el calendario.</li>
+                <li><strong>Navegación:</strong> El estado de la pantalla (splash, diálogos abiertos) se guarda temporalmente para mantener la experiencia al rotar el dispositivo.</li>
+            </ul>
+            <p>Todo esto permanece <strong>exclusivamente en tu dispositivo</strong> y no se transmite a ningún servidor.</p>
+
+            <h3>2.2 Datos en la nube (Firebase Firestore)</h3>
+            <ul>
+                <li><strong>Votos:</strong> Cuando votas, se registra un contador anónimo asociado al ID del contendiente. No se guarda tu identidad, IP, ni ningún dato que permita identificarte.</li>
+                <li><strong>Ganadores:</strong> El ID, nombre e imagen del contendiente ganador de cada ronda se almacenan para mostrar los resultados en el calendario.</li>
+            </ul>
+            <p>Los datos en Firestore son <strong>totalmente anónimos</strong>. No hay cuentas de usuario, no hay correos electrónicos, no hay seguimiento.</p>
+
+            <h3>2.3 Datos de terceros</h3>
+            <ul>
+                <li><strong>GitHub:</strong> Los contendientes y algunos resultados se obtienen del repositorio público de GitHub. La app lee archivos JSON públicos; no envía ningún dato personal a GitHub.</li>
+                <li><strong>Imágenes:</strong> Las fotos de los contendientes se cargan desde URLs públicas (Picsum Photos o las que el organizador configure). No se comparten datos personales con estos servicios.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🎯</span> 3. Cómo usamos tus datos</h2>
+            <ul>
+                <li>Los votos se usan <strong>exclusivamente</strong> para determinar los ganadores del torneo.</li>
+                <li>Los datos locales se usan para gestionar los tokens y mantener tus preferencias.</li>
+                <li><strong>No usamos tus datos para publicidad, marketing, perfiles ni venta a terceros.</strong></li>
+                <li><strong>No hay anuncios</strong> en la aplicación.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🔗</span> 4. Servicios externos</h2>
+            <p>Trofeo Karagato utiliza los siguientes servicios de terceros:</p>
+            <ul>
+                <li><strong>Firebase Firestore (Google):</strong> Almacenamiento de votos. <a href="https://firebase.google.com/support/privacy" target="_blank" style="color: var(--primary);">Política de privacidad de Firebase</a></li>
+                <li><strong>GitHub:</strong> Alojamiento de datos de contendientes y resultados. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" style="color: var(--primary);">Política de privacidad de GitHub</a></li>
+                <li><strong>Picsum Photos:</strong> Imágenes de ejemplo. <a href="https://picsum.photos/privacy" target="_blank" style="color: var(--primary);">Política de privacidad de Picsum</a></li>
+            </ul>
+            <p>Ninguno de estos servicios recibe información personal tuya desde nuestra app.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🧹</span> 5. Retención y eliminación de datos</h2>
+            <ul>
+                <li><strong>Datos locales:</strong> Puedes borrarlos en cualquier momento desde Ajustes → Apps → Trofeo Karagato → Borrar datos, o desinstalando la app.</li>
+                <li><strong>Votos en Firestore:</strong> Se mantienen para el historial del torneo. Como son anónimos, no es posible identificarte para solicitar su eliminación. Si deseas que un voto específico sea eliminado, contáctanos con los detalles necesarios.</li>
+                <li><strong>Ganadores:</strong> Los registros de ganadores se conservan como parte del historial público del torneo.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">👶</span> 6. Privacidad de menores</h2>
+            <p>No recopilamos a sabiendas información de menores de 13 años. Si eres padre o tutor y crees que tu hijo nos ha proporcionado datos personales (aunque no los solicitemos), contáctanos para que investiguemos.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">📬</span> 7. Contacto</h2>
+            <p>Si tienes preguntas sobre este aviso de privacidad, puedes contactarnos a través de:</p>
+            <ul>
+                <li><strong>GitHub:</strong> <a href="https://github.com/Karagato-Studios" target="_blank" style="color: var(--primary);">Karagato Studios</a></li>
+                <li><strong>Repositorio oficial:</strong> <a href="https://github.com/KaragatoStudios/TrofeoKaragato" target="_blank" style="color: var(--primary);">Trofeo Karagato en GitHub</a></li>
+            </ul>
+            <div class="highlight-box">
+                <p>🐱 <strong>En Karagato Studios creemos que la privacidad no debería ser complicada.</strong> Por eso esta app funciona sin cuentas, sin correos y sin seguimiento. Solo tú, tus tokens y unos gatos compitiendo por un trofeo.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="paws">🐾 ✦ 🐾 ✦ 🐾</div>
+        <p>© 2026 <strong>Karagato Studios</strong> — Hecho con 🐱 para los amantes de las mascotas</p>
+        <p style="margin-top: 6px;">
+            <a href="https://github.com/KaragatoStudios/TrofeoKaragato" target="_blank">Ver proyecto en GitHub</a>
+        </p>
+    </footer>
+
+</div>
+
+<script>
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>
